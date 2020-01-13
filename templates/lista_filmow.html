@@ -10,6 +10,16 @@
     <link rel="stylesheet" href="{% static 'moj_css.css' %}">
 </head>
 <body>
+
+    {% if user.is_authenticated %}
+         Witam {{user.username}} <br>
+         <button><a href="{% url 'logout' %}">Logout</a></button>
+    {% else %}
+         <button><a href="{% url 'login' %}">Login</a></button>
+    {% endif %}
+
+
+
     <p class="red">Lista filmów</p>
 <ul>
     {% for film in filmy %}
