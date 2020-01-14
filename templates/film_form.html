@@ -5,10 +5,13 @@
 
 
 {% block body %}
-
-<form method='post'>
-    {% csrf_token %}
-    {{ form }}
-    <button type="submit">Dodaj</button>
+<div class="card" style="width: 600px;">
+      <div class="card-body">
+        <form method='post'>
+         {% csrf_token %}
+            {{ form }}
+            <button type="submit">Dodaj</button>
 </form>
+      </div>
+</div>
 {% endblock %}
